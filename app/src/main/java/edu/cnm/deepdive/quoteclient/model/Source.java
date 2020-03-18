@@ -5,10 +5,10 @@ import java.net.URL;
 import java.util.Date;
 import java.util.UUID;
 
-public class Quote {
+public class Source {
 
   @Expose
-  private UUID id;
+  private UUID uuid;
 
   @Expose
   private Date created;
@@ -17,20 +17,20 @@ public class Quote {
   private Date updated;
 
   @Expose
-  private String text;
+  private String name;
+
+  @Expose
+  private Quote[] quotes;
 
   @Expose
   private URL href;
 
-  @Expose
-  private Source source;
-
-  public UUID getId() {
-    return id;
+  public UUID getUuid() {
+    return uuid;
   }
 
-  public void setId(UUID id) {
-    this.id = id;
+  public void setUuid(UUID uuid) {
+    this.uuid = uuid;
   }
 
   public Date getCreated() {
@@ -49,12 +49,20 @@ public class Quote {
     this.updated = updated;
   }
 
-  public String getText() {
-    return text;
+  public String getName() {
+    return name;
   }
 
-  public void setText(String text) {
-    this.text = text;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Quote[] getQuotes() {
+    return quotes;
+  }
+
+  public void setQuotes(Quote[] quotes) {
+    this.quotes = quotes;
   }
 
   public URL getHref() {
@@ -63,13 +71,5 @@ public class Quote {
 
   public void setHref(URL href) {
     this.href = href;
-  }
-
-  public Source getSource() {
-    return source;
-  }
-
-  public void setSource(Source source) {
-    this.source = source;
   }
 }
